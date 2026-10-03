@@ -1,0 +1,41 @@
+
+create table employee(
+ id int primary key,
+ name varchar(10),
+ deptno int,
+ job varchar(10),
+ esalary int,
+ annual_salary int );
+
+
+
+create table department(
+  deptname varchar(100),
+  deptno int,
+  deptlocation varchar(150)
+ );
+
+insert into department(deptname,deptno,deptlocation)
+values
+('CS',01,'c-block'),
+('MS',02,'d-block'),
+('HUM',03,'N-block');
+
+INSERT INTO employee (id, name, deptno, job, esalary, annual_salary)
+VALUES
+(1, 'Ali', 1, 'Manager', 80000, 960000),
+(2, 'Ahmed', 1, 'Developer', 60000, 720000),
+(3, 'Sara', 2, 'Analyst', 70000, 840000),
+(4, 'Hassan', 2, 'Developer', 65000, 780000),
+(5, 'Ayesha', 3, 'HR', 55000, 660000),
+(6, 'Usman', 1, 'Developer', 62000, 744000),
+(7, 'Fatima', 3, 'Manager', 85000, 1020000);
+
+select * from department
+select * from employee
+select distinct job  from employee
+
+SELECT CONCAT('<<', name, ' is a ', job, '>>') AS role
+FROM employee;
+select name,esalary,esalary*12 as annual_salary, esalary*0.15 as increase_salary
+from employee
